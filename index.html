@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriela Rigby | Three homes in San Pancho, Nayarit</title>
+<meta name="description" content="Casa Yawi, Casa Kieri and Casa Xalli: three new homes in San Pancho, Nayarit, designed and built by Gabriela Rigby. Heated saltwater pools, roof gardens, travertine floors.">
+<meta property="og:title" content="Three homes in San Pancho, Nayarit">
+<meta property="og:description" content="Casa Yawi, Casa Kieri and Casa Xalli, designed and built by Gabriela Rigby.">
+<meta property="og:image" content="https://gabriellarigby.com/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/kieri-mono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#7f8b6f; --sage-dk:#4a5835; --sand:#efe8dc; --sand-2:#e5dccd; --ink:#2b2a26; --muted:#6d6a62; --white:#fbf9f5;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--white);line-height:1.65;font-size:17px}
+img{display:block;max-width:100%}
+a{color:inherit}
+html[lang=en] [lang=es], html[lang=es] [lang=en]{display:none !important}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:background .3s,box-shadow .3s;color:#fff}
+.nav.solid{background:rgba(251,249,245,.96);color:var(--ink);box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.brand{font-family:var(--serif);font-size:22px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+.nav ul a{text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.lang{border:1px solid currentColor;background:none;color:inherit;font:500 12px var(--sans);letter-spacing:.12em;padding:6px 12px;cursor:pointer}
+@media(max-width:760px){.nav ul li.hide-m{display:none}}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:560px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:slow 18s ease-out forwards}
+@keyframes slow{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.05) 55%,rgba(20,22,15,.62) 100%)}
+.hero-in{position:relative;z-index:2;padding:0 5vw 9vh;max-width:900px}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.9}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.4vw,86px);line-height:1.02;margin:14px 0 18px}
+.hero p{font-size:18px;max-width:560px;opacity:.95}
+.btn{display:inline-block;margin-top:28px;padding:14px 30px;border:1px solid currentColor;text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;transition:background .25s,color .25s}
+.hero .btn:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:var(--sage-dk);border-color:var(--sage-dk);color:#fff}
+.btn.dark:hover{background:var(--ink);border-color:var(--ink)}
+
+/* sections */
+section{padding:110px 5vw}
+.wrap{max-width:1240px;margin:0 auto}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1.1}
+.intro{text-align:center;background:var(--sand)}
+.intro .wrap{max-width:760px}
+.intro p{margin-top:22px;color:var(--muted);font-size:18px}
+.monos{display:flex;justify-content:center;gap:56px;margin-top:54px;flex-wrap:wrap}
+.monos a{display:flex;flex-direction:column;align-items:center;gap:14px;text-decoration:none;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-dk)}
+.monos img{height:92px;width:auto;transition:transform .3s}
+.monos a:hover img{transform:translateY(-4px)}
+
+/* house */
+.house{border-top:1px solid var(--sand-2)}
+.house-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.house:nth-of-type(odd) .house-head .media{order:2}
+.media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
+.media img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s}
+.media:hover img{transform:scale(1.03)}
+.house-logo{height:64px;width:auto;margin-bottom:26px}
+.status{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-dk);border:1px solid var(--sage);padding:6px 14px;margin-bottom:22px}
+.price{font-family:var(--serif);font-size:30px;margin:18px 0 6px}
+.desc{color:var(--muted);margin-top:16px}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px;border-top:1px solid var(--sand-2);border-bottom:1px solid var(--sand-2)}
+.specs div{padding:18px 0;text-align:center}
+.specs div+div{border-left:1px solid var(--sand-2)}
+.specs b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;line-height:1}
+.specs span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.feat{list-style:none;margin-top:24px;columns:2;column-gap:28px}
+.feat li{padding:6px 0 6px 20px;position:relative;font-size:15.5px;break-inside:avoid}
+.feat li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;background:var(--sage)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:56px}
+.gallery button{border:0;padding:0;background:var(--sand);aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s}
+.gallery button:hover img{transform:scale(1.05)}
+.gallery .wide{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.gallery .half{grid-column:span 2;aspect-ratio:auto}
+@media(max-width:900px){.gallery .half{aspect-ratio:8/3}}
+.yawi-card{aspect-ratio:4/3;background:var(--sand);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px}
+.yawi-card img{height:150px;width:auto}
+.yawi-card p{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-dk)}
+@media(max-width:900px){
+  .house-head{grid-template-columns:1fr;gap:36px}
+  .house:nth-of-type(odd) .house-head .media{order:0}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .feat{columns:1}
+  .monos{gap:26px}.monos img{height:64px}.monos a{font-size:10px;letter-spacing:.16em}
+  .brand{font-size:18px}
+  section{padding:80px 6vw}
+}
+
+/* location */
+.place{background:var(--sage-dk);color:#f3efe6}
+.place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.place p{opacity:.88;margin-top:20px}
+.place .media{aspect-ratio:16/11}
+@media(max-width:900px){.place .wrap{grid-template-columns:1fr}}
+
+/* contact */
+.contact{text-align:center;background:var(--sand)}
+.contact .wrap{max-width:720px}
+.contact p{color:var(--muted);margin-top:18px}
+.cbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.cbtns .btn{color:var(--sage-dk)}
+.cbtns .btn:hover{background:var(--sage-dk);color:#fff}
+.agency{margin-top:46px;font-size:14px;color:var(--muted)}
+footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(18,18,14,.94);z-index:100;display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:86vh;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:18px;opacity:.8}
+.lb button:hover{opacity:1}
+.lb .x{top:10px;right:16px}.lb .p{left:10px;top:50%;transform:translateY(-50%)}.lb .n{right:10px;top:50%;transform:translateY(-50%)}
+.lb .cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#ddd;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#top">Gabriela Rigby</a>
+  <ul>
+    <li class="hide-m"><a href="#yawi">Yawi</a></li>
+    <li class="hide-m"><a href="#kieri">Kieri</a></li>
+    <li class="hide-m"><a href="#xalli">Xalli</a></li>
+    <li class="hide-m"><a href="#contact"><span lang="en">Contact</span><span lang="es">Contacto</span></a></li>
+    <li><button class="lang" id="langBtn" aria-label="Change language"><span lang="en">ES</span><span lang="es">EN</span></button></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <img src="img/kieri-facade.jpg" alt="Casa Kieri facade with palms and wooden lattice, San Pancho">
+  <div class="hero-in">
+    <div class="eyebrow">San Francisco, Nayarit · Riviera Nayarit</div>
+    <h1><span lang="en">Three homes in San Pancho</span><span lang="es">Tres casas en San Pancho</span></h1>
+    <p><span lang="en">Casa Yawi, Casa Kieri and Casa Xalli. Designed and built by architect Gabriela Rigby, a few minutes from the beach.</span><span lang="es">Casa Yawi, Casa Kieri y Casa Xalli. Diseñadas y construidas por la arquitecta Gabriela Rigby, a unos minutos de la playa.</span></p>
+    <a class="btn" href="#homes"><span lang="en">See the homes</span><span lang="es">Ver las casas</span></a>
+  </div>
+</header>
+
+<section class="intro" id="homes">
+  <div class="wrap reveal">
+    <h2><span lang="en">Made for life on the coast</span><span lang="es">Hechas para vivir en la costa</span></h2>
+    <p><span lang="en">Each house has its own heated saltwater pool, a roof garden and open living spaces that let the breeze through. Warm plaster, wood lattice, travertine and plenty of green. One is ready to move into today, and two will be finished in early 2027.</span><span lang="es">Cada casa tiene su propia alberca de agua salada climatizada, roof garden y espacios abiertos por donde corre el aire. Aplanados cálidos, celosías de madera, travertino y mucha vegetación. Una ya está lista para habitarse y dos se entregan a principios de 2027.</span></p>
+    <div class="monos">
+      <a href="#yawi"><img src="img/yawi-mono.png" alt="Casa Yawi">Casa Yawi</a>
+      <a href="#kieri"><img src="img/kieri-mono.png" alt="Casa Kieri">Casa Kieri</a>
+      <a href="#xalli"><img src="img/xalli-mono.png" alt="Casa Xalli">Casa Xalli</a>
+    </div>
+  </div>
+</section>
+
+<!-- YAWI -->
+<section class="house" id="yawi">
+  <div class="wrap house-head reveal">
+    <div class="yawi-card media">
+      <img src="img/yawi-mono.png" alt="Casa Yawi monogram">
+      <p><span lang="en">Photos available on request</span><span lang="es">Fotos disponibles bajo solicitud</span></p>
+    </div>
+    <div>
+      <img class="house-logo" src="img/yawi-logo.png" alt="Casa Yawi">
+      <div class="status"><span lang="en">Ready to move in</span><span lang="es">Lista para habitar</span></div>
+      <h2>Casa Yawi</h2>
+      <div class="price">USD $1,300,000</div>
+      <p class="desc"><span lang="en">Finished and semi-furnished, so you can move in right away. Solar panels keep running costs low, and the roof garden comes with a full outdoor kitchen for long evenings outside.</span><span lang="es">Terminada y semiamueblada, lista para mudarse. Los paneles solares mantienen bajos los gastos, y el roof garden tiene cocina exterior completa para las tardes al aire libre.</span></p>
+      <div class="specs">
+        <div><b>4</b><span lang="en">Bedrooms</span><span lang="es">Recámaras</span></div>
+        <div><b>5</b><span lang="en">Bathrooms</span><span lang="es">Baños</span></div>
+        <div><b>1</b><span lang="en">Pool</span><span lang="es">Alberca</span></div>
+        <div><b>☀</b><span lang="en">Solar</span><span lang="es">Solar</span></div>
+      </div>
+      <ul class="feat">
+        <li><span lang="en">Heated saltwater pool</span><span lang="es">Alberca de agua salada climatizada</span></li>
+        <li><span lang="en">Solar panels</span><span lang="es">Paneles solares</span></li>
+        <li><span lang="en">Roof garden</span><span lang="es">Roof garden</span></li>
+        <li><span lang="en">Fully equipped outdoor kitchen</span><span lang="es">Cocina exterior equipada</span></li>
+        <li><span lang="en">Semi-furnished</span><span lang="es">Semiamueblada</span></li>
+        <li><span lang="en">Move in today</span><span lang="es">Entrega inmediata</span></li>
+      </ul>
+      <a class="btn dark" href="#contact"><span lang="en">Ask about Yawi</span><span lang="es">Preguntar por Yawi</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- KIERI -->
+<section class="house" id="kieri">
+  <div class="wrap house-head reveal">
+    <div class="media"><img src="img/kieri-exterior.jpg" alt="Casa Kieri exterior" data-g="kieri" data-i="0"></div>
+    <div>
+      <img class="house-logo" src="img/kieri-logo.png" alt="Casa Kieri">
+      <div class="status"><span lang="en">Delivery January 2027</span><span lang="es">Entrega enero 2027</span></div>
+      <h2>Casa Kieri</h2>
+      <div class="price">USD $1,550,000</div>
+      <p class="desc"><span lang="en">Three levels around an open plan living area and a pool you step straight into from the kitchen. Upstairs there is a sitting area under a pergola and a roof garden with views of the hills. Wiring is already planned for Starlink and solar.</span><span lang="es">Tres niveles alrededor de una sala abierta y una alberca a la que sales directo desde la cocina. Arriba hay una estancia bajo pérgola y un roof garden con vista a los cerros. La instalación ya está preparada para Starlink y paneles solares.</span></p>
+      <div class="specs">
+        <div><b>3</b><span lang="en">Bedrooms</span><span lang="es">Recámaras</span></div>
+        <div><b>4</b><span lang="en">Bathrooms</span><span lang="es">Baños</span></div>
+        <div><b>3</b><span lang="en">Levels</span><span lang="es">Niveles</span></div>
+        <div><b>1</b><span lang="en">Garage</span><span lang="es">Cochera</span></div>
+      </div>
+      <ul class="feat">
+        <li><span lang="en">Heated saltwater pool</span><span lang="es">Alberca de agua salada climatizada</span></li>
+        <li><span lang="en">Travertine floors</span><span lang="es">Pisos de travertino</span></li>
+        <li><span lang="en">Open plan living</span><span lang="es">Espacios abiertos</span></li>
+        <li><span lang="en">Upstairs lounge with pergola</span><span lang="es">Estancia alta con pérgola</span></li>
+        <li><span lang="en">Roof garden</span><span lang="es">Roof garden</span></li>
+        <li><span lang="en">Ready for Starlink and solar</span><span lang="es">Preparación para Starlink y solar</span></li>
+      </ul>
+      <a class="btn dark" href="#contact"><span lang="en">Ask about Kieri</span><span lang="es">Preguntar por Kieri</span></a>
+    </div>
+  </div>
+  <div class="wrap gallery reveal" data-gallery="kieri"></div>
+</section>
+
+<!-- XALLI -->
+<section class="house" id="xalli">
+  <div class="wrap house-head reveal">
+    <div class="media"><img src="img/xalli-facade.jpg" alt="Casa Xalli facade" data-g="xalli" data-i="0"></div>
+    <div>
+      <img class="house-logo" src="img/xalli-logo.png" alt="Casa Xalli">
+      <div class="status"><span lang="en">Delivery March 2027</span><span lang="es">Entrega marzo 2027</span></div>
+      <h2>Casa Xalli</h2>
+      <div class="price">USD $1,600,000</div>
+      <p class="desc"><span lang="en">Three levels with travertine marble throughout and an open living, dining and kitchen space. The primary suite has the top floor to itself and opens onto a roof garden under a pergola.</span><span lang="es">Tres niveles con mármol travertino en toda la casa y sala, comedor y cocina integrados. La recámara principal ocupa el último piso y abre a un roof garden con pérgola.</span></p>
+      <div class="specs">
+        <div><b>3</b><span lang="en">Bedrooms</span><span lang="es">Recámaras</span></div>
+        <div><b>3.5</b><span lang="en">Bathrooms</span><span lang="es">Baños</span></div>
+        <div><b>3</b><span lang="en">Levels</span><span lang="es">Niveles</span></div>
+        <div><b>1</b><span lang="en">Parking</span><span lang="es">Cajón</span></div>
+      </div>
+      <ul class="feat">
+        <li><span lang="en">Heated saltwater pool</span><span lang="es">Alberca de agua salada climatizada</span></li>
+        <li><span lang="en">Travertine marble floors</span><span lang="es">Pisos de mármol travertino</span></li>
+        <li><span lang="en">Open concept living</span><span lang="es">Concepto abierto</span></li>
+        <li><span lang="en">Private primary suite</span><span lang="es">Suite principal privada</span></li>
+        <li><span lang="en">Roof garden with pergola</span><span lang="es">Roof garden con pérgola</span></li>
+        <li><span lang="en">Parking for one car</span><span lang="es">Estacionamiento para un auto</span></li>
+      </ul>
+      <a class="btn dark" href="#contact"><span lang="en">Ask about Xalli</span><span lang="es">Preguntar por Xalli</span></a>
+    </div>
+  </div>
+  <div class="wrap gallery reveal" data-gallery="xalli"></div>
+</section>
+
+<section class="place">
+  <div class="wrap reveal">
+    <div>
+      <div class="eyebrow">San Pancho, Nayarit</div>
+      <h2 style="margin-top:14px"><span lang="en">A small surf town that stayed small</span><span lang="es">Un pueblo surfero que sigue siendo pueblo</span></h2>
+      <p><span lang="en">San Pancho sits on the Riviera Nayarit, about 45 minutes north of the Puerto Vallarta airport. Cobblestone streets, a long open beach, good food and a community that cares about keeping it that way. Sayulita is ten minutes down the road.</span><span lang="es">San Pancho está en la Riviera Nayarit, a unos 45 minutos al norte del aeropuerto de Puerto Vallarta. Calles empedradas, una playa larga y abierta, buena comida y una comunidad que la cuida. Sayulita queda a diez minutos.</span></p>
+    </div>
+    <div class="media"><img src="img/xalli-terrace.jpg" alt="Terrace with mountain view" data-g="xalli" data-i="4"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <h2><span lang="en">Visit or ask a question</span><span lang="es">Agenda una visita o pregunta</span></h2>
+    <p><span lang="en">Write to Gabriela directly for floor plans, details or a private tour of any of the three homes.</span><span lang="es">Escríbele directo a Gabriela para planos, detalles o una visita privada a cualquiera de las tres casas.</span></p>
+    <div class="cbtns">
+      <a class="btn" id="waBtn" href="https://wa.me/523331896938" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" id="mailBtn" href="mailto:rigbygabriela@gmail.com?subject=San%20Pancho%20homes">Email</a>
+    </div>
+    <p class="agency"><span lang="en">Also listed with</span><span lang="es">También en venta con</span> <a href="mailto:arturo@protierrapartners.com">Protierra Partners</a>, Sayulita</p>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Gabriela Rigby · San Francisco, Nayarit, México</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="x" aria-label="Close">×</button>
+  <button class="p" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="n" aria-label="Next">›</button>
+  <div class="cap"></div>
+</div>
+
+<script>
+const G={
+  kieri:[["kieri-exterior","Exterior"],["kieri-facade","Fachada / Facade","wide"],["kieri-entry","Entrada / Entry"],["kieri-pool-kitchen","Alberca y cocina / Pool and kitchen"],["kieri-living","Sala / Living"],["kieri-primary","Recámara principal / Primary bedroom"],["kieri-bedroom","Recámara / Bedroom","half"],["kieri-rooftop","Terraza / Terrace","half"]],
+  xalli:[["xalli-facade","Fachada / Facade"],["xalli-living","Sala / Living","wide"],["xalli-kitchen","Cocina / Kitchen"],["xalli-bedroom","Recámara / Bedroom"],["xalli-terrace","Terraza / Terrace","half"]]
+};
+document.querySelectorAll('[data-gallery]').forEach(el=>{
+  const k=el.dataset.gallery;
+  G[k].forEach(([f,c,s],i)=>{ if(i===0) return;
+    const b=document.createElement('button'); if(s) b.className=s;
+    b.innerHTML=`<img loading="lazy" src="img/${f}${s?'':'-sm'}.jpg" alt="${c}">`;
+    b.onclick=()=>open(k,i); el.appendChild(b);
+  });
+});
+document.querySelectorAll('img[data-g]').forEach(im=>im.onclick=()=>open(im.dataset.g,+im.dataset.i));
+const lb=document.getElementById('lb'), lbi=lb.querySelector('img'), cap=lb.querySelector('.cap'); let cur=[],idx=0;
+function show(){const [f,c]=cur[idx]; lbi.src=`img/${f}.jpg`; lbi.alt=c; cap.textContent=c+'  ·  '+(idx+1)+' / '+cur.length}
+function open(k,i){cur=G[k];idx=i;show();lb.classList.add('on');document.body.style.overflow='hidden'}
+function close(){lb.classList.remove('on');document.body.style.overflow=''}
+lb.querySelector('.x').onclick=close; lb.onclick=e=>{if(e.target===lb)close()};
+lb.querySelector('.p').onclick=()=>{idx=(idx-1+cur.length)%cur.length;show()};
+lb.querySelector('.n').onclick=()=>{idx=(idx+1)%cur.length;show()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')lb.querySelector('.p').click(); if(e.key==='ArrowRight')lb.querySelector('.n').click()});
+
+// language
+const root=document.documentElement;
+function setLang(l){root.lang=l; try{localStorage.setItem('lang',l)}catch(e){}
+  const msg=l==='es'?'Hola Gabriela, me interesan las casas en San Pancho.':'Hi Gabriela, I am interested in the homes in San Pancho.';
+  document.getElementById('waBtn').href='https://wa.me/523331896938?text='+encodeURIComponent(msg);
+  document.title=l==='es'?'Gabriela Rigby | Tres casas en San Pancho, Nayarit':'Gabriela Rigby | Three homes in San Pancho, Nayarit';}
+let saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+const q=new URLSearchParams(location.search).get('lang');
+setLang(q||saved||((navigator.language||'en').startsWith('es')?'es':'en'));
+document.getElementById('langBtn').onclick=()=>setLang(root.lang==='es'?'en':'es');
+
+const nav=document.getElementById('nav'); const onS=()=>nav.classList.toggle('solid',scrollY>innerHeight*.7); addEventListener('scroll',onS,{passive:true}); onS();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
