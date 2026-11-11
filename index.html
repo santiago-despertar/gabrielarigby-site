@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gabriela Rigby | Three homes in San Pancho, Nayarit</title>
 <meta name="description" content="Casa Yawi, Casa Kieri and Casa Xalli: three new homes in San Pancho, Nayarit, designed and built by Gabriela Rigby. Heated saltwater pools, roof gardens, travertine floors.">
 <meta property="og:title" content="Three homes in San Pancho, Nayarit">
@@ -65,7 +65,7 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-
 .house-head{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .house:nth-of-type(odd) .house-head .media{order:2}
 .media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
-.media img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s}
+.media img{touch-action:manipulation;width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s}
 .media:hover img{transform:scale(1.03)}
 .house-logo{height:64px;width:auto;margin-bottom:26px}
 .status{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-dk);border:1px solid var(--sage);padding:6px 14px;margin-bottom:22px}
@@ -75,12 +75,13 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-
 .specs div{padding:18px 0;text-align:center}
 .specs div+div{border-left:1px solid var(--sand-2)}
 .specs b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;line-height:1}
+.specs .ico{width:30px;height:30px;display:block;margin:0 auto;fill:none;stroke:var(--sage-dk);stroke-width:3.2;stroke-linecap:round}
 .specs span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .feat{list-style:none;margin-top:24px;columns:2;column-gap:28px}
 .feat li{padding:6px 0 6px 20px;position:relative;font-size:15.5px;break-inside:avoid}
 .feat li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;background:var(--sage)}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:56px}
-.gallery button{border:0;padding:0;background:var(--sand);aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+.gallery button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;border:0;padding:0;background:var(--sand);aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
 .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s}
 .gallery button:hover img{transform:scale(1.05)}
 .gallery .wide{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
@@ -102,10 +103,18 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-
 
 /* location */
 .place{background:var(--sage-dk);color:#f3efe6}
-.place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.place .place-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .place p{opacity:.88;margin-top:20px}
 .place .media{aspect-ratio:16/11}
-@media(max-width:900px){.place .wrap{grid-template-columns:1fr}}
+@media(max-width:900px){.place .place-in{grid-template-columns:1fr}}
+
+.sp-gal{margin-top:40px}
+.credit{display:block;margin-top:14px;font-size:11px;letter-spacing:.06em;opacity:.65;text-align:right}
+.credit a{color:inherit}
+.loc{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center}
+.map{aspect-ratio:4/3;background:var(--sand);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.35) sepia(.12)}
+@media(max-width:900px){.loc{grid-template-columns:1fr;gap:32px}}
 
 /* contact */
 .contact{text-align:center;background:var(--sand)}
@@ -118,14 +127,18 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-
 footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
 /* lightbox */
-.lb{position:fixed;inset:0;background:rgba(18,18,14,.94);z-index:100;display:none;align-items:center;justify-content:center}
-.lb.on{display:flex}
-.lb img{max-width:92vw;max-height:86vh;object-fit:contain}
-.lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:18px;opacity:.8}
-.lb button:hover{opacity:1}
-.lb .x{top:10px;right:16px}.lb .p{left:10px;top:50%;transform:translateY(-50%)}.lb .n{right:10px;top:50%;transform:translateY(-50%)}
-.lb .cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#ddd;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
-
+.lb{position:fixed;inset:0;background:#12120e;z-index:100;display:none;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.lb.on{display:block}
+.lb .stage{position:absolute;inset:56px 0 64px;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:pan-y}
+.lb img{max-width:94vw;max-height:100%;object-fit:contain;transition:opacity .25s,transform .25s;cursor:pointer;-webkit-user-drag:none;touch-action:pan-y}
+.lb img.fade{opacity:0}
+.lb button{position:absolute;background:rgba(255,255,255,.08);border:0;color:#fff;cursor:pointer;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s;touch-action:manipulation;z-index:2}
+.lb button:hover{background:rgba(255,255,255,.2)}
+.lb button svg{width:22px;height:22px;stroke:#fff;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lb .x{top:10px;right:14px}.lb .p{left:18px;top:50%;margin-top:-26px}.lb .n{right:18px;top:50%;margin-top:-26px}
+.lb .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ddd;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.lb .count{position:absolute;top:24px;left:22px;color:#bbb;font-size:12px;letter-spacing:.2em}
+@media(max-width:700px){.lb .p,.lb .n{display:none}.lb .stage{inset:56px 0 70px}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
 .reveal.in{opacity:1;transform:none}
 </style>
@@ -138,6 +151,7 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
     <li class="hide-m"><a href="#yawi">Yawi</a></li>
     <li class="hide-m"><a href="#kieri">Kieri</a></li>
     <li class="hide-m"><a href="#xalli">Xalli</a></li>
+    <li class="hide-m"><a href="#location"><span lang="en">Location</span><span lang="es">Ubicación</span></a></li>
     <li class="hide-m"><a href="#contact"><span lang="en">Contact</span><span lang="es">Contacto</span></a></li>
     <li><button class="lang" id="langBtn" aria-label="Change language"><span lang="en">ES</span><span lang="es">EN</span></button></li>
   </ul>
@@ -179,7 +193,7 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
         <div><b>4</b><span lang="en">Bedrooms</span><span lang="es">Recámaras</span></div>
         <div><b>5</b><span lang="en">Bathrooms</span><span lang="es">Baños</span></div>
         <div><b>1</b><span lang="en">Pool</span><span lang="es">Alberca</span></div>
-        <div><b>☀</b><span lang="en">Solar</span><span lang="es">Solar</span></div>
+        <div><b><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M9.9 9.9l4.9 4.9M33.2 33.2l4.9 4.9M9.9 38.1l4.9-4.9M33.2 14.8l4.9-4.9"/></svg></b><span lang="en">Solar</span><span lang="es">Solar</span></div>
       </div>
       <ul class="feat">
         <li><span lang="en">Heated saltwater pool</span><span lang="es">Alberca de agua salada climatizada</span></li>
@@ -225,7 +239,6 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
     </div>
   </div>
   <div class="wrap gallery reveal" data-gallery="kieri"></div>
-  <p class="note wrap"><span lang="en">Renders. Finishes match those of Casa Yawi, which is finished.</span><span lang="es">Renders. Los acabados son los mismos de Casa Yawi, que ya está terminada.</span></p>
 </section>
 
 <!-- XALLI -->
@@ -256,17 +269,30 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
     </div>
   </div>
   <div class="wrap gallery reveal" data-gallery="xalli"></div>
-  <p class="note wrap"><span lang="en">Renders. Finishes match those of Casa Yawi, which is finished.</span><span lang="es">Renders. Los acabados son los mismos de Casa Yawi, que ya está terminada.</span></p>
 </section>
 
-<section class="place">
-  <div class="wrap reveal">
+<section class="place" id="san-pancho">
+  <div class="wrap place-in reveal">
     <div>
       <div class="eyebrow">San Pancho, Nayarit</div>
       <h2 style="margin-top:14px"><span lang="en">A small surf town that stayed small</span><span lang="es">Un pueblo surfero que sigue siendo pueblo</span></h2>
       <p><span lang="en">San Pancho sits on the Riviera Nayarit, about 45 minutes north of the Puerto Vallarta airport. Cobblestone streets, a long open beach, good food and a community that cares about keeping it that way. Sayulita is ten minutes down the road.</span><span lang="es">San Pancho está en la Riviera Nayarit, a unos 45 minutos al norte del aeropuerto de Puerto Vallarta. Calles empedradas, una playa larga y abierta, buena comida y una comunidad que la cuida. Sayulita queda a diez minutos.</span></p>
     </div>
-    <div class="media"><img src="img/xalli-terrace.jpg" alt="Terrace with mountain view" data-g="xalli" data-i="4"></div>
+    <div class="media"><img src="img/sp-aerial-beach.jpg" alt="San Pancho beach and town from above" data-g="sp" data-i="0"></div>
+  </div>
+  <div class="wrap gallery sp-gal reveal" data-gallery="sp"></div>
+  <p class="credit wrap"><span lang="en">Sunset and beach photos</span><span lang="es">Fotos de atardecer y playa</span>: Luisalvaz, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>, Wikimedia Commons</p>
+</section>
+
+<section class="location" id="location">
+  <div class="wrap loc reveal">
+    <div>
+      <div class="eyebrow" style="color:var(--sage-dk)"><span lang="en">Location</span><span lang="es">Ubicación</span></div>
+      <h2 style="margin-top:14px"><span lang="en">Calle China and Calle Asia</span><span lang="es">Calle China esquina Asia</span></h2>
+      <p class="desc"><span lang="en">The three homes sit together at 9 Calle China, corner of Calle Asia, in San Pancho. A short walk to the beach, the main street, restaurants and the Tuesday market.</span><span lang="es">Las tres casas están juntas en Calle China 9, esquina con Calle Asia, en San Pancho. A una caminata corta de la playa, la calle principal, los restaurantes y el tianguis de los martes.</span></p>
+      <a class="btn dark" href="https://www.google.com/maps/search/?api=1&query=Calle+China+9+esquina+Asia+San+Francisco+Nayarit" target="_blank" rel="noopener"><span lang="en">Open in Google Maps</span><span lang="es">Abrir en Google Maps</span></a>
+    </div>
+    <div class="map"><iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Calle+China+%26+Calle+Asia,+San+Francisco,+Nayarit,+Mexico&z=16&output=embed"></iframe></div>
   </div>
 </section>
 
@@ -285,15 +311,18 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
 <footer>© <span id="yr"></span> Gabriela Rigby · San Francisco, Nayarit, México</footer>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true">
-  <button class="x" aria-label="Close">×</button>
-  <button class="p" aria-label="Previous">‹</button>
-  <img alt="">
-  <button class="n" aria-label="Next">›</button>
+  <div class="count"></div>
+  <button class="x" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="p" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+  <div class="stage"><img alt=""></div>
+  <button class="n" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
   <div class="cap"></div>
+</div>
 </div>
 
 <script>
 const G={
+  sp:[["sp-aerial-beach","San Pancho"],["sp-sunset","Atardecer en la playa / Beach sunset"],["sp-beach","Playa San Pancho / San Pancho beach"],["sp-coast","La costa / The coast"],["sp-town","El pueblo / The town"]],
   yawi:[["yawi-pool-living","Alberca y sala / Pool and living"],["yawi-roof-dining","Roof garden","wide"],["yawi-living","Sala / Living"],["yawi-dining","Comedor y cocina / Dining and kitchen"],["yawi-courtyard","Patio / Courtyard"],["yawi-primary","Recámara principal / Primary bedroom"],["yawi-bath","Baño / Bathroom"],["yawi-bedroom","Recámara / Bedroom"],["yawi-bedroom-terrace","Recámara con terraza / Bedroom with terrace"],["yawi-roof-kitchen","Cocina exterior / Outdoor kitchen"],["yawi-pool","Alberca / Pool","half"],["yawi-roof-garden","Roof garden","half"]],
   kieri:[["kieri-exterior","Exterior"],["kieri-facade","Fachada / Facade","wide"],["kieri-entry","Entrada / Entry"],["kieri-pool-kitchen","Alberca y cocina / Pool and kitchen"],["kieri-living","Sala / Living"],["kieri-primary","Recámara principal / Primary bedroom"],["kieri-bedroom","Recámara / Bedroom","half"],["kieri-rooftop","Terraza / Terrace","half"]],
   xalli:[["xalli-facade","Fachada / Facade"],["xalli-living","Sala / Living","wide"],["xalli-kitchen","Cocina / Kitchen"],["xalli-bedroom","Recámara / Bedroom"],["xalli-terrace","Terraza / Terrace","half"]]
@@ -307,14 +336,28 @@ document.querySelectorAll('[data-gallery]').forEach(el=>{
   });
 });
 document.querySelectorAll('img[data-g]').forEach(im=>im.onclick=()=>open(im.dataset.g,+im.dataset.i));
-const lb=document.getElementById('lb'), lbi=lb.querySelector('img'), cap=lb.querySelector('.cap'); let cur=[],idx=0;
-function show(){const [f,c]=cur[idx]; lbi.src=`img/${f}.jpg`; lbi.alt=c; cap.textContent=c+'  ·  '+(idx+1)+' / '+cur.length}
+const lb=document.getElementById('lb'), lbi=lb.querySelector('img'), cap=lb.querySelector('.cap'), cnt=lb.querySelector('.count'); let cur=[],idx=0,busy=false;
+const pre=i=>{const [f]=cur[(i+cur.length)%cur.length]; const im=new Image(); im.src=`img/${f}.jpg`;};
+function show(dir){const [f,c]=cur[idx]; const set=()=>{lbi.src=`img/${f}.jpg`; lbi.alt=c; cap.textContent=c; cnt.textContent=(idx+1)+' / '+cur.length; lbi.classList.remove('fade'); pre(idx+1); pre(idx-1);};
+  if(dir){lbi.classList.add('fade'); setTimeout(set,150)} else set();}
+function go(d){if(!cur.length)return; idx=(idx+d+cur.length)%cur.length; show(d);}
 function open(k,i){cur=G[k];idx=i;show();lb.classList.add('on');document.body.style.overflow='hidden'}
 function close(){lb.classList.remove('on');document.body.style.overflow=''}
-lb.querySelector('.x').onclick=close; lb.onclick=e=>{if(e.target===lb)close()};
-lb.querySelector('.p').onclick=()=>{idx=(idx-1+cur.length)%cur.length;show()};
-lb.querySelector('.n').onclick=()=>{idx=(idx+1)%cur.length;show()};
-addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')lb.querySelector('.p').click(); if(e.key==='ArrowRight')lb.querySelector('.n').click()});
+lb.querySelector('.x').addEventListener('click',e=>{e.stopPropagation();close()});
+lb.querySelector('.p').addEventListener('click',e=>{e.stopPropagation();go(-1)});
+lb.querySelector('.n').addEventListener('click',e=>{e.stopPropagation();go(1)});
+lb.addEventListener('dblclick',e=>e.preventDefault());
+// click / tap: on image go next (left third goes back), on backdrop close
+let sx=0,sy=0,moved=false,touching=false;
+lb.addEventListener('pointerdown',e=>{sx=e.clientX;sy=e.clientY;moved=false;touching=true});
+lb.addEventListener('pointermove',e=>{if(touching&&Math.abs(e.clientX-sx)>10)moved=true});
+lb.addEventListener('pointerup',e=>{if(!touching)return; touching=false; const dx=e.clientX-sx, dy=e.clientY-sy;
+  if(e.target.closest('button'))return;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){go(dx<0?1:-1);return}
+  if(moved)return;
+  if(e.target===lbi){const r=lbi.getBoundingClientRect(); go(e.clientX<r.left+r.width/3?-1:1)}
+  else if(e.target===lb||e.target.classList.contains('stage'))close();});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')go(-1); if(e.key==='ArrowRight')go(1)});
 
 // language
 const root=document.documentElement;
