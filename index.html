@@ -86,6 +86,8 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-
 .gallery button:hover img{transform:scale(1.05)}
 .gallery .wide{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
 .gallery .half{grid-column:span 2;aspect-ratio:auto}
+.gallery .half img{aspect-ratio:auto}
+.gallery .half{aspect-ratio:calc(8.04/3)}
 @media(max-width:900px){.gallery .half{aspect-ratio:8/3}}
 .note{margin-top:14px;font-size:12px;letter-spacing:.08em;color:var(--muted);text-align:right}
 .yawi-card{aspect-ratio:4/3;background:var(--sand);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;text-align:center;padding:40px}
@@ -139,6 +141,18 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
 .lb .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ddd;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
 .lb .count{position:absolute;top:24px;left:22px;color:#bbb;font-size:12px;letter-spacing:.2em}
 @media(max-width:700px){.lb .p,.lb .n{display:none}.lb .stage{inset:56px 0 70px}}
+.prev{background:#fff}
+.prev .head{max-width:720px}
+.prev .head p{margin-top:18px;color:var(--muted);font-size:17px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.proj{border:0;padding:0;background:none;text-align:left;cursor:zoom-in;font:inherit;color:inherit}
+.proj .ph{aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.proj:hover img{transform:scale(1.04)}
+.proj h3{font-family:inherit;font-weight:500;font-size:20px;margin-top:14px;letter-spacing:.01em}
+.proj .meta{color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+@media(max-width:900px){.projects{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.projects{grid-template-columns:1fr}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
 .reveal.in{opacity:1;transform:none}
 </style>
@@ -151,6 +165,7 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
     <li class="hide-m"><a href="#yawi">Yawi</a></li>
     <li class="hide-m"><a href="#kieri">Kieri</a></li>
     <li class="hide-m"><a href="#xalli">Xalli</a></li>
+    <li class="hide-m"><a href="#previous"><span lang="en">Previous work</span><span lang="es">Proyectos</span></a></li>
     <li class="hide-m"><a href="#location"><span lang="en">Location</span><span lang="es">Ubicación</span></a></li>
     <li class="hide-m"><a href="#contact"><span lang="en">Contact</span><span lang="es">Contacto</span></a></li>
     <li><button class="lang" id="langBtn" aria-label="Change language"><span lang="en">ES</span><span lang="es">EN</span></button></li>
@@ -175,6 +190,21 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
       <a href="#yawi"><img src="img/yawi-mono.png" alt="Casa Yawi">Casa Yawi</a>
       <a href="#kieri"><img src="img/kieri-mono.png" alt="Casa Kieri">Casa Kieri</a>
       <a href="#xalli"><img src="img/xalli-mono.png" alt="Casa Xalli">Casa Xalli</a>
+    </div>
+  </div>
+</section>
+
+<section class="prev" id="previous">
+  <div class="wrap reveal">
+    <div class="head">
+      <div class="eyebrow" style="color:var(--sage-dk)"><span lang="en">Previous work</span><span lang="es">Proyectos anteriores</span></div>
+      <h2 style="margin-top:14px"><span lang="en">Building in the area since 2021</span><span lang="es">Construyendo en la zona desde 2021</span></h2>
+      <p><span lang="en">Gabriela has been designing and building homes here since 2021, always with high quality materials and finishes. These are a few of the houses she has finished.</span><span lang="es">Gabriela diseña y construye casas aquí desde 2021, siempre con materiales y acabados de alta calidad. Estas son algunas de las casas que ha terminado.</span></p>
+    </div>
+    <div class="projects">
+      <button class="proj" data-open="mango"><div class="ph"><img loading="lazy" src="img/prev-mango-01-sm.jpg" alt="Casa Mango"></div><h3>Casa Mango</h3><div class="meta"><span lang="en">New build · 12 photos</span><span lang="es">Obra nueva · 12 fotos</span></div></button>
+      <button class="proj" data-open="aguacate"><div class="ph"><img loading="lazy" src="img/prev-aguacate-01-sm.jpg" alt="Casa Aguacate"></div><h3>Casa Aguacate</h3><div class="meta"><span lang="en">New build · 10 photos</span><span lang="es">Obra nueva · 10 fotos</span></div></button>
+      <button class="proj" data-open="rosa"><div class="ph"><img loading="lazy" src="img/prev-rosa-01-sm.jpg" alt="Casa Rosa"></div><h3>Casa Rosa</h3><div class="meta"><span lang="en">Remodel · before and after</span><span lang="es">Remodelación · antes y después</span></div></button>
     </div>
   </div>
 </section>
@@ -322,10 +352,13 @@ footer{padding:40px 5vw;text-align:center;font-size:12px;letter-spacing:.14em;te
 
 <script>
 const G={
+  mango:[["prev-mango-01","Casa Mango"],["prev-mango-02","Casa Mango"],["prev-mango-03","Casa Mango"],["prev-mango-04","Casa Mango"],["prev-mango-05","Casa Mango"],["prev-mango-06","Casa Mango"],["prev-mango-07","Casa Mango"],["prev-mango-08","Casa Mango"],["prev-mango-09","Casa Mango"],["prev-mango-10","Casa Mango"],["prev-mango-11","Casa Mango"],["prev-mango-12","Casa Mango"]],
+  aguacate:[["prev-aguacate-01","Casa Aguacate"],["prev-aguacate-02","Casa Aguacate"],["prev-aguacate-03","Casa Aguacate"],["prev-aguacate-04","Casa Aguacate"],["prev-aguacate-05","Casa Aguacate"],["prev-aguacate-06","Casa Aguacate"],["prev-aguacate-07","Casa Aguacate"],["prev-aguacate-08","Casa Aguacate"],["prev-aguacate-09","Casa Aguacate"],["prev-aguacate-10","Casa Aguacate"]],
+  rosa:[["prev-rosa-01","Casa Rosa"],["prev-rosa-02","Casa Rosa"],["prev-rosa-03","Casa Rosa"],["prev-rosa-04","Casa Rosa"],["prev-rosa-05","Casa Rosa"],["prev-rosa-06","Casa Rosa"],["prev-rosa-07","Casa Rosa"],["prev-rosa-08","Casa Rosa"],["prev-rosa-09","Casa Rosa"],["prev-rosa-10","Casa Rosa"],["prev-rosa-11","Casa Rosa · Antes / Before"],["prev-rosa-12","Casa Rosa · Antes / Before"],["prev-rosa-13","Casa Rosa · Antes / Before"]],
   sp:[["sp-aerial-beach","San Pancho"],["sp-sunset","Atardecer en la playa / Beach sunset"],["sp-beach","Playa San Pancho / San Pancho beach"],["sp-coast","La costa / The coast"],["sp-town","El pueblo / The town"]],
-  yawi:[["yawi-pool-living","Alberca y sala / Pool and living"],["yawi-roof-dining","Roof garden","wide"],["yawi-living","Sala / Living"],["yawi-dining","Comedor y cocina / Dining and kitchen"],["yawi-courtyard","Patio / Courtyard"],["yawi-primary","Recámara principal / Primary bedroom"],["yawi-bath","Baño / Bathroom"],["yawi-bedroom","Recámara / Bedroom"],["yawi-bedroom-terrace","Recámara con terraza / Bedroom with terrace"],["yawi-roof-kitchen","Cocina exterior / Outdoor kitchen"],["yawi-pool","Alberca / Pool","half"],["yawi-roof-garden","Roof garden","half"]],
-  kieri:[["kieri-exterior","Exterior"],["kieri-facade","Fachada / Facade","wide"],["kieri-entry","Entrada / Entry"],["kieri-pool-kitchen","Alberca y cocina / Pool and kitchen"],["kieri-living","Sala / Living"],["kieri-primary","Recámara principal / Primary bedroom"],["kieri-bedroom","Recámara / Bedroom","half"],["kieri-rooftop","Terraza / Terrace","half"]],
-  xalli:[["xalli-facade","Fachada / Facade"],["xalli-living","Sala / Living","wide"],["xalli-kitchen","Cocina / Kitchen"],["xalli-bedroom","Recámara / Bedroom"],["xalli-terrace","Terraza / Terrace","half"]]
+  yawi:[["yawi-pool-living","Alberca y sala / Pool and living"],["yawi-roof-dining","Roof garden","wide"],["yawi-living","Sala / Living"],["yawi-dining","Comedor y cocina / Dining and kitchen"],["yawi-courtyard","Patio / Courtyard"],["yawi-primary","Recámara principal / Primary bedroom"],["yawi-bath","Baño / Bathroom"],["yawi-bedroom","Recámara / Bedroom"],["yawi-bedroom-terrace","Recámara con terraza / Bedroom with terrace"],["yawi-bedroom-garden","Recámara / Bedroom"],["yawi-bedroom-2","Recámara / Bedroom"],["yawi-roof-kitchen","Cocina exterior / Outdoor kitchen"],["yawi-pool","Alberca / Pool"],["yawi-roof-garden","Roof garden"]],
+  kieri:[["kieri-exterior","Exterior"],["kieri-facade","Fachada / Facade","half"],["kieri-entry","Entrada / Entry"],["kieri-pool-kitchen","Alberca y cocina / Pool and kitchen"],["kieri-living","Sala / Living"],["kieri-primary","Recámara principal / Primary bedroom"],["kieri-bedroom","Recámara / Bedroom","half"]],
+  xalli:[["xalli-facade","Fachada / Facade"],["xalli-living","Sala / Living","half"],["xalli-kitchen","Cocina / Kitchen"],["xalli-bedroom","Recámara / Bedroom"],["xalli-terrace","Terraza / Terrace","half"],["xalli-pool-terrace","Alberca y terraza / Pool and terrace","half"]]
 };
 document.querySelectorAll('[data-gallery]').forEach(el=>{
   const k=el.dataset.gallery;
@@ -335,6 +368,7 @@ document.querySelectorAll('[data-gallery]').forEach(el=>{
     b.onclick=()=>open(k,i); el.appendChild(b);
   });
 });
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>open(b.dataset.open,0));
 document.querySelectorAll('img[data-g]').forEach(im=>im.onclick=()=>open(im.dataset.g,+im.dataset.i));
 const lb=document.getElementById('lb'), lbi=lb.querySelector('img'), cap=lb.querySelector('.cap'), cnt=lb.querySelector('.count'); let cur=[],idx=0,busy=false;
 const pre=i=>{const [f]=cur[(i+cur.length)%cur.length]; const im=new Image(); im.src=`img/${f}.jpg`;};
